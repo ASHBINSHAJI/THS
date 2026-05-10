@@ -1,0 +1,298 @@
+/* ==========================================================================
+   THS AGENCY SYSTEM - CORE STYLES
+   ========================================================================== */
+
+/* Variables */
+:root {
+  --ths-primary: #00f0ff;
+  --ths-secondary: #0044ff;
+  --ths-accent: #ff0055;
+  --ths-dark: #030305;
+  --ths-glow: rgba(0, 240, 255, 0.4);
+  --glass-bg: rgba(10, 10, 15, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.05);
+}
+
+/* Typography Base */
+.agency-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  z-index: 10;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  padding: 5vw;
+  box-sizing: border-box;
+}
+
+/* Magnetic Buttons */
+.magnetic-btn {
+  position: relative;
+  padding: 1.2rem 2.5rem;
+  background: transparent;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.magnetic-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: all 0.6s ease;
+}
+
+.magnetic-btn:hover {
+  border-color: var(--ths-primary);
+  box-shadow: 0 0 20px var(--ths-glow), inset 0 0 10px rgba(0, 240, 255, 0.1);
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.magnetic-btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: rgba(0, 68, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+/* Section Headings */
+.agency-heading {
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.9;
+  margin: 0;
+  background: linear-gradient(180deg, #fff 0%, #a0a0a0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+}
+
+.agency-subheading {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #888;
+  margin-top: 2rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 3rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* specific section styles */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.split-layout {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  gap: 4rem;
+  align-items: center;
+}
+
+.split-left {
+  flex: 1;
+}
+
+.split-right {
+  flex: 1;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin-top: 4rem;
+}
+
+/* Holographic styling */
+.hologram-text {
+  color: var(--ths-primary);
+  text-shadow: 0 0 10px var(--ths-glow), 0 0 20px var(--ths-glow);
+  font-family: monospace;
+  letter-spacing: 0.2em;
+}
+
+/* Flip Card Container */
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  height: 650px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 3rem;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Pillar Card Details */
+.pillar-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.pillar-card:hover {
+  border-color: rgba(0,240,255,0.3);
+  box-shadow: 0 0 30px rgba(0,240,255,0.05);
+}
+
+.pillar-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.pillar-desc {
+  font-size: 1rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* Team Card */
+.team-card {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.team-name {
+  font-size: 4rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .team-name {
+  color: white;
+  -webkit-text-stroke: 0;
+  text-shadow: 0 0 20px rgba(255,255,255,0.5);
+}
+
+.team-role {
+  color: var(--ths-primary);
+  font-family: monospace;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+/* Process nodes */
+.process-node {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.process-node.active {
+  opacity: 1;
+}
+
+.process-number {
+  font-size: 1rem;
+  font-family: monospace;
+  color: var(--ths-primary);
+  border: 1px solid var(--ths-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px var(--ths-glow);
+}
+
+.process-label {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Footer */
+.agency-footer {
+  padding: 5vw;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ths-dark);
+  position: relative;
+  z-index: 10;
+}
