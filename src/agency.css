@@ -13,6 +13,56 @@
   --glass-border: rgba(255, 255, 255, 0.05);
 }
 
+/* Navbar */
+.agency-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: linear-gradient(180deg, rgba(3, 3, 5, 0.8) 0%, transparent 100%);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-logo {
+  font-family: 'Syncopate', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  color: white;
+  text-shadow: 0 0 10px var(--ths-glow);
+}
+
+.nav-status {
+  font-family: monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--ths-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--ths-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--ths-primary);
+  animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.4; }
+  50% { opacity: 1; }
+  100% { opacity: 0.4; }
+}
+
 /* Typography Base */
 .agency-section {
   position: relative;
@@ -285,6 +335,79 @@
   text-transform: uppercase;
 }
 
+/* Workflow Section Styles */
+.workflow-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.workflow-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ths-primary), var(--ths-accent));
+  width: 0%;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.workflow-node {
+  position: relative;
+  zIndex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.workflow-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--ths-dark);
+  border: 2px solid white;
+  box-shadow: 0 0 20px var(--ths-glow);
+}
+
+.workflow-label {
+  font-family: monospace;
+  color: var(--ths-primary);
+  background: rgba(0,0,0,0.5);
+  padding: 0.5rem 1rem;
+  borderRadius: 4px;
+  border: 1px solid rgba(0,240,255,0.2);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .workflow-container {
+    height: auto;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: flex-start;
+    padding-left: 40px;
+  }
+
+  .workflow-line {
+    top: 0;
+    left: 49px;
+    width: 2px;
+    height: 100%;
+    transform: none;
+  }
+
+  .workflow-node {
+    flex-direction: row;
+    gap: 2rem;
+  }
+}
+
 /* Footer */
 .agency-footer {
   padding: 5vw;
@@ -295,4 +418,70 @@
   background: var(--ths-dark);
   position: relative;
   z-index: 10;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .split-layout {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .agency-section {
+    padding: 10vw 5vw;
+  }
+
+  .agency-heading {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  .team-name {
+    font-size: 3rem;
+  }
+
+  .agency-footer {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .process-label {
+    font-size: clamp(1.5rem, 8vw, 2.5rem);
+  }
+
+  .nav-logo {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .magnetic-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+
+  .agency-heading {
+    font-size: clamp(2rem, 15vw, 4rem);
+  }
+
+  .glass-panel {
+    padding: 1.5rem;
+  }
 }

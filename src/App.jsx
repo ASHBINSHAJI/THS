@@ -20,6 +20,7 @@ import WorkflowSection from './components/agency/WorkflowSection';
 import ProcessSection from './components/agency/ProcessSection';
 import WhySection from './components/agency/WhySection';
 import { CtaSection, FooterSection } from './components/agency/CtaAndFooter';
+import Navbar from './components/agency/Navbar';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,6 +57,7 @@ function App() {
 
   return (
     <div ref={containerRef} className="app-container">
+      <Navbar />
       <CursorManager />
       
       <div className="noise-overlay"></div>

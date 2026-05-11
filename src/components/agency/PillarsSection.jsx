@@ -62,7 +62,7 @@ export default function PillarsSection() {
   return (
     <section ref={containerRef} className="agency-section pillars-section">
       <h2 className="agency-heading" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '4rem', textAlign: 'center' }}>FOUR CORE PILLARS</h2>
-      <div className="grid-layout" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+      <div className="grid-layout">
         {flipPairs.map((pair, idx) => (
           <div key={idx} className="flip-card pillar-card-anim">
             <div className="flip-card-inner">
