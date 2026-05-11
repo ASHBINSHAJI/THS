@@ -15,7 +15,7 @@ const teamMembers = [
     name: 'NEVIN',
     role: 'Marketing Strategy & Operations',
     tagline: 'GROWTH IS SYSTEMIZED.',
-    specs: ['Marketing systems', 'SEO', 'Content', 'Workflow control', 'AI research', 'Marketing specialist', 'Editing', 'COO (Chief Operating Officer)']
+    specs: ['Marketing systems', 'Workflow control', 'AI research', 'Marketing specialist', 'Editing', 'COO (Chief Operating Officer)']
   },
   {
     name: 'ATHEN',
@@ -40,6 +40,15 @@ export default function TeamSection() {
         stagger: 0.3,
         duration: 1,
         ease: 'power3.out'
+      });
+
+      // Subtle blur animation for upcoming creators
+      gsap.to('.reveal-soon-text', {
+        opacity: 0.5,
+        duration: 2,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut'
       });
     }, containerRef);
     return () => ctx.revert();
@@ -81,6 +90,18 @@ export default function TeamSection() {
             </div>
           </div>
         ))}
+
+        {/* REVEALING SOON SECTION */}
+        <div className="team-card" style={{ borderStyle: 'dashed', borderColor: 'rgba(255,255,255,0.05)', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ filter: 'blur(12px)', opacity: 0.3, textAlign: 'center', userSelect: 'none' }}>
+            <div className="team-role">// [IDENTITY_ENCRYPTED]</div>
+            <h3 className="team-name">ELITE CREATORS</h3>
+            <div style={{ color: 'var(--ths-primary)', marginTop: '0.5rem', fontWeight: 600 }}>SYSTEM ACCESS PENDING</div>
+          </div>
+          <div className="reveal-soon-text" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontFamily: 'monospace', fontSize: '1.2rem', color: 'var(--ths-primary)', letterSpacing: '0.5em', fontWeight: 700 }}>
+            REVEALING SOON
+          </div>
+        </div>
       </div>
     </section>
   );
