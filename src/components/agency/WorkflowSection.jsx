@@ -9,6 +9,8 @@ export default function WorkflowSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth <= 768;
+
       gsap.from('.workflow-node', {
         scrollTrigger: {
           trigger: containerRef.current,
@@ -26,7 +28,7 @@ export default function WorkflowSection() {
           trigger: containerRef.current,
           start: 'top 60%',
         },
-        width: '100%',
+        [isMobile ? 'height' : 'width']: '100%',
         duration: 1.5,
         ease: 'power2.inOut'
       });
