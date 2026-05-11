@@ -60,7 +60,7 @@ export default function TeamSection() {
       
       <div className="team-container" style={{ width: '100%', maxWidth: '1200px' }}>
         {teamMembers.map((member, idx) => (
-          <div key={idx} className="team-card team-card-blur" style={{ filter: 'blur(15px)', opacity: 0.4, transition: 'filter 0.5s ease', position: 'relative' }}>
+          <div key={idx} className="team-card team-card-blur" style={{ filter: 'blur(25px)', opacity: 0.35, transition: 'filter 0.5s ease', position: 'relative' }}>
             <div>
               <div className="team-role">// {member.role}</div>
               <h3 className="team-name">{member.name}</h3>
@@ -97,7 +97,7 @@ export default function TeamSection() {
 
         {/* REVEALING SOON SECTION */}
         <div className="team-card team-card-blur" style={{ borderStyle: 'dashed', borderColor: 'rgba(255,255,255,0.05)', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
-          <div style={{ filter: 'blur(12px)', opacity: 0.3, textAlign: 'center', userSelect: 'none' }}>
+          <div style={{ filter: 'blur(15px)', opacity: 0.25, textAlign: 'center', userSelect: 'none' }}>
             <div className="team-role">// [IDENTITY_ENCRYPTED]</div>
             <h3 className="team-name">ELITE CREATORS</h3>
             <div style={{ color: 'var(--ths-primary)', marginTop: '0.5rem', fontWeight: 600 }}>SYSTEM ACCESS PENDING</div>

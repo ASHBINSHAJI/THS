@@ -48,41 +48,42 @@ export default function HeroSection() {
           <div className="hero-title-line hero-logo-ths" style={{ color: 'var(--ths-primary)', transition: 'text-shadow 0.3s' }}>THS</div>
           <div className="hero-title-line" style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)', marginTop: '1rem', color: '#fff', opacity: 0.8 }}>EVOLVE YOUR EMPIRE.</div>
         </h1>
+
+        {/* REVEALING SOON LOGO MOTION - MOVED ABOVE PARA */}
+        <div style={{ margin: '2rem 0', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ 
+            width: '80px', 
+            height: '80px', 
+            border: '2px solid rgba(255,255,255,0.1)', 
+            borderRadius: '50%', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            filter: 'blur(10px)', // Increased blur
+            opacity: 0.4,
+            animation: 'pulse 3s infinite'
+          }}>
+            <div className="nav-logo" style={{ fontSize: '0.8rem', opacity: 0.6 }}>THS</div>
+          </div>
+          <div className="reveal-soon-text" style={{ 
+            marginTop: '0.8rem', 
+            fontFamily: 'monospace', 
+            fontSize: '0.65rem', 
+            color: 'var(--ths-primary)', 
+            letterSpacing: '0.5em',
+            fontWeight: 700,
+            opacity: 0.8
+          }}>
+            REVEALING SOON
+          </div>
+        </div>
+
         <p className="agency-subheading hero-subtitle">
           The ultimate system for those who demand total digital dominance through <span style={{ color: '#ff00f0' }}>Art</span>, <span style={{ color: '#f0ff00' }}>Tech</span>, and <span style={{ color: 'var(--ths-primary)' }}>AI</span>.
         </p>
         <div className="hero-actions">
           <button className="magnetic-btn btn-primary">Enter The System</button>
           <button className="magnetic-btn">Start Your Transformation</button>
-        </div>
-
-        {/* REVEALING SOON LOGO MOTION */}
-        <div style={{ marginTop: '6rem', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <div style={{ 
-            width: '100px', 
-            height: '100px', 
-            border: '2px solid rgba(255,255,255,0.1)', 
-            borderRadius: '50%', 
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center',
-            filter: 'blur(5px)',
-            opacity: 0.3,
-            animation: 'pulse 4s infinite'
-          }}>
-            <div className="nav-logo" style={{ fontSize: '1rem', opacity: 0.5 }}>THS</div>
-          </div>
-          <div className="reveal-soon-text" style={{ 
-            marginTop: '1rem', 
-            fontFamily: 'monospace', 
-            fontSize: '0.7rem', 
-            color: 'var(--ths-primary)', 
-            letterSpacing: '0.4em',
-            fontWeight: 700,
-            opacity: 0.6
-          }}>
-            REVEALING SOON
-          </div>
         </div>
       </div>
     </section>
