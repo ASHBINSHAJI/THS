@@ -35,7 +35,6 @@ export default function TeamSection() {
           trigger: '.team-container',
           start: 'top 80%',
         },
-        filter: 'blur(20px)',
         opacity: 0,
         y: 30,
         stagger: 0.3,
@@ -61,7 +60,7 @@ export default function TeamSection() {
       
       <div className="team-container" style={{ width: '100%', maxWidth: '1200px' }}>
         {teamMembers.map((member, idx) => (
-          <div key={idx} className="team-card team-card-blur">
+          <div key={idx} className="team-card team-card-blur" style={{ filter: 'blur(15px)', opacity: 0.4, transition: 'filter 0.5s ease' }}>
             <div>
               <div className="team-role">// {member.role}</div>
               <h3 className="team-name">{member.name}</h3>
