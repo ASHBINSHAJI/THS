@@ -30,15 +30,16 @@ export default function TeamSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.team-card', {
+      gsap.from('.team-card-blur', {
         scrollTrigger: {
           trigger: '.team-container',
           start: 'top 80%',
         },
-        x: -50,
+        filter: 'blur(20px)',
         opacity: 0,
+        y: 30,
         stagger: 0.3,
-        duration: 1,
+        duration: 1.5,
         ease: 'power3.out'
       });
 
@@ -60,7 +61,7 @@ export default function TeamSection() {
       
       <div className="team-container" style={{ width: '100%', maxWidth: '1200px' }}>
         {teamMembers.map((member, idx) => (
-          <div key={idx} className="team-card">
+          <div key={idx} className="team-card team-card-blur">
             <div>
               <div className="team-role">// {member.role}</div>
               <h3 className="team-name">{member.name}</h3>
@@ -92,7 +93,7 @@ export default function TeamSection() {
         ))}
 
         {/* REVEALING SOON SECTION */}
-        <div className="team-card" style={{ borderStyle: 'dashed', borderColor: 'rgba(255,255,255,0.05)', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div className="team-card team-card-blur" style={{ borderStyle: 'dashed', borderColor: 'rgba(255,255,255,0.05)', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ filter: 'blur(12px)', opacity: 0.3, textAlign: 'center', userSelect: 'none' }}>
             <div className="team-role">// [IDENTITY_ENCRYPTED]</div>
             <h3 className="team-name">ELITE CREATORS</h3>
