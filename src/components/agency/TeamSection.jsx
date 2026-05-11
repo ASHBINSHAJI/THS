@@ -60,7 +60,7 @@ export default function TeamSection() {
       
       <div className="team-container" style={{ width: '100%', maxWidth: '1200px' }}>
         {teamMembers.map((member, idx) => (
-          <div key={idx} className="team-card team-card-blur" style={{ filter: 'blur(15px)', opacity: 0.4, transition: 'filter 0.5s ease' }}>
+          <div key={idx} className="team-card team-card-blur" style={{ filter: 'blur(15px)', opacity: 0.4, transition: 'filter 0.5s ease', position: 'relative' }}>
             <div>
               <div className="team-role">// {member.role}</div>
               <h3 className="team-name">{member.name}</h3>
@@ -87,6 +87,10 @@ export default function TeamSection() {
                   </div>
                 );
               })}
+            </div>
+            {/* OVERLAY */}
+            <div className="reveal-soon-text" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontFamily: 'monospace', fontSize: '1rem', color: 'var(--ths-primary)', letterSpacing: '0.3em', fontWeight: 700, zIndex: 10, whiteSpace: 'nowrap' }}>
+              REVEALING SOON
             </div>
           </div>
         ))}

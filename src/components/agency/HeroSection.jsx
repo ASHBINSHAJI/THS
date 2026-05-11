@@ -55,6 +55,35 @@ export default function HeroSection() {
           <button className="magnetic-btn btn-primary">Enter The System</button>
           <button className="magnetic-btn">Start Your Transformation</button>
         </div>
+
+        {/* REVEALING SOON LOGO MOTION */}
+        <div style={{ marginTop: '6rem', position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{ 
+            width: '100px', 
+            height: '100px', 
+            border: '2px solid rgba(255,255,255,0.1)', 
+            borderRadius: '50%', 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center',
+            filter: 'blur(5px)',
+            opacity: 0.3,
+            animation: 'pulse 4s infinite'
+          }}>
+            <div className="nav-logo" style={{ fontSize: '1rem', opacity: 0.5 }}>THS</div>
+          </div>
+          <div className="reveal-soon-text" style={{ 
+            marginTop: '1rem', 
+            fontFamily: 'monospace', 
+            fontSize: '0.7rem', 
+            color: 'var(--ths-primary)', 
+            letterSpacing: '0.4em',
+            fontWeight: 700,
+            opacity: 0.6
+          }}>
+            REVEALING SOON
+          </div>
+        </div>
       </div>
     </section>
   );
