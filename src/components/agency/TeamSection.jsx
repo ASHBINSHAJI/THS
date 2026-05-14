@@ -30,7 +30,8 @@ export default function TeamSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.team-card-blur', {
+      // Standard entrance without blur references
+      gsap.from('.team-card', {
         scrollTrigger: {
           trigger: '.team-container',
           start: 'top 80%',
@@ -40,15 +41,6 @@ export default function TeamSection() {
         stagger: 0.3,
         duration: 1.5,
         ease: 'power3.out'
-      });
-
-      // Subtle blur animation for upcoming creators
-      gsap.to('.reveal-soon-text', {
-        opacity: 0.5,
-        duration: 2,
-        repeat: -1,
-        yoyo: true,
-        ease: 'sine.inOut'
       });
     }, containerRef);
     return () => ctx.revert();
@@ -60,7 +52,7 @@ export default function TeamSection() {
 
       <div className="team-container" style={{ width: '100%', maxWidth: '1200px' }}>
         {teamMembers.map((member, idx) => (
-          <div key={idx} className="team-card team-card-blur" style={{ position: 'relative' }}>
+          <div key={idx} className="team-card" style={{ position: 'relative' }}>
             <div>
               <div className="team-role">// {member.role}</div>
               <h3 className="team-name">{member.name}</h3>
@@ -79,7 +71,7 @@ export default function TeamSection() {
                       fontSize: '1.2rem',
                       letterSpacing: '0.05em',
                       textTransform: 'uppercase',
-                      textShadow: '1px 1px 0px var(--ths-secondary), 2px 2px 0px var(--ths-primary), 0px 0px 15px var(--ths-glow)',
+                      textShadow: '0px 0px 10px var(--ths-glow)',
                       transform: 'scale(1.05)',
                     } : { color: '#888', marginBottom: '0.5rem' }
                   }>
@@ -91,15 +83,12 @@ export default function TeamSection() {
           </div>
         ))}
 
-        {/* REVEALING SOON SECTION */}
-        <div className="team-card team-card-blur" style={{ borderStyle: 'dashed', borderColor: 'rgba(255,255,255,0.05)', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
+        {/* REVEALING SOON SECTION - UNBLURRED */}
+        <div className="team-card" style={{ borderStyle: 'dashed', borderColor: 'rgba(255,255,255,0.05)', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ textAlign: 'center', userSelect: 'none' }}>
             <div className="team-role">// [IDENTITY_ENCRYPTED]</div>
             <h3 className="team-name">ELITE CREATORS</h3>
             <div style={{ color: 'var(--ths-primary)', marginTop: '0.5rem', fontWeight: 600 }}>SYSTEM ACCESS PENDING</div>
-          </div>
-          <div className="reveal-soon-text" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontFamily: 'monospace', fontSize: '1.2rem', color: 'var(--ths-primary)', letterSpacing: '0.5em', fontWeight: 700 }}>
-            REVEALING SOON
           </div>
         </div>
       </div>
