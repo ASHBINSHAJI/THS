@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const teamMembers = [
   {
-    name: 'ASHBIN',
+    name: 'ABHISHEK',
     role: 'Creative Technology & Visual Systems',
     tagline: 'VISUAL ENGINEERING.',
     specs: ['CGI & animation', 'Web/App dev', 'Gen AI visuals', 'Electronic specialist', 'Project manager']
@@ -18,7 +18,7 @@ const teamMembers = [
     specs: ['Marketing systems', 'Workflow control', 'AI research', 'Marketing specialist', 'Editing', 'COO (Chief Operating Officer)']
   },
   {
-    name: 'ATHEN',
+    name: 'ATHUL',
     role: 'Motion Systems & Automation',
     tagline: 'MOTION CREATES IMPACT.',
     specs: ['SaaS animation', 'Automation', 'Branding expert', 'Graphic designer', 'CGO (Chief Growth Operator)']
@@ -57,10 +57,10 @@ export default function TeamSection() {
   return (
     <section ref={containerRef} className="agency-section team-section" style={{ alignItems: 'flex-start', padding: '10vw 5vw' }}>
       <h2 className="agency-heading" style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '4rem' }}>ELITE OPERATORS</h2>
-      
+
       <div className="team-container" style={{ width: '100%', maxWidth: '1200px' }}>
         {teamMembers.map((member, idx) => (
-          <div key={idx} className="team-card team-card-blur" style={{ filter: 'blur(25px)', opacity: 0.35, transition: 'filter 0.5s ease', position: 'relative' }}>
+          <div key={idx} className="team-card team-card-blur" style={{ position: 'relative' }}>
             <div>
               <div className="team-role">// {member.role}</div>
               <h3 className="team-name">{member.name}</h3>
@@ -88,16 +88,12 @@ export default function TeamSection() {
                 );
               })}
             </div>
-            {/* OVERLAY */}
-            <div className="reveal-soon-text" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', fontFamily: 'monospace', fontSize: '1rem', color: 'var(--ths-primary)', letterSpacing: '0.3em', fontWeight: 700, zIndex: 10, whiteSpace: 'nowrap' }}>
-              REVEALING SOON
-            </div>
           </div>
         ))}
 
         {/* REVEALING SOON SECTION */}
         <div className="team-card team-card-blur" style={{ borderStyle: 'dashed', borderColor: 'rgba(255,255,255,0.05)', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
-          <div style={{ filter: 'blur(15px)', opacity: 0.25, textAlign: 'center', userSelect: 'none' }}>
+          <div style={{ textAlign: 'center', userSelect: 'none' }}>
             <div className="team-role">// [IDENTITY_ENCRYPTED]</div>
             <h3 className="team-name">ELITE CREATORS</h3>
             <div style={{ color: 'var(--ths-primary)', marginTop: '0.5rem', fontWeight: 600 }}>SYSTEM ACCESS PENDING</div>

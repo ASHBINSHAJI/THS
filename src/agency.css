@@ -289,8 +289,8 @@
   font-weight: 800;
   margin: 0;
   text-transform: uppercase;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  color: white;
+  text-shadow: 0 0 10px rgba(255,255,255,0.2);
   transition: all 0.3s ease;
 }
 
