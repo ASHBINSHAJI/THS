@@ -45,7 +45,7 @@ export default function HeroSection() {
     <section ref={containerRef} className="agency-section hero-section">
       <div className="hero-content">
         <h1 className="agency-heading" style={{ overflow: 'hidden' }}>
-          <div className="hero-title-line hero-logo-ths" style={{ color: 'var(--ths-primary)', transition: 'text-shadow 0.3s' }}>THS</div>
+          <div className="hero-title-line hero-logo-ths" style={{ color: 'var(--ths-primary)', transition: 'text-shadow 0.3s' }}>VHA</div>
           <div className="hero-title-line" style={{ fontSize: 'clamp(1.5rem, 4vw, 3rem)', marginTop: '1rem', color: '#fff', opacity: 0.8 }}>EVOLVE YOUR EMPIRE.</div>
         </h1>
 
